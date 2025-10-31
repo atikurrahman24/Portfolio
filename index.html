@@ -1,299 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portfolio Design</title>
-
+    <title>Atikur Rahman Portfolio</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Tailwind cdn Setup -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font-Awesome kit Setup -->
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/9f59a2d7ab.js" crossorigin="anonymous"></script>
 
-    <!-- Text-Font Setup -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <!-- Font Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: "Roboto Condensed", sans-serif;
+        }
+
+        /* Custom Animation */
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeSlideUp {
+            animation: fadeSlideUp 0.8s ease-out forwards;
         }
     </style>
 
 </head>
 
-<body>
-    <!-- Navbar Section -->
-    <section>
-        <div>
-            <nav class="flex items-center justify-between flex-wrap bg-[#0e0f11] py-2 lg:py-5 px-10 md:px-20 lg:px-30">
-                <div class="flex items-center flex-shrink-0 text-[#ffffff] mr-6">
-                    <span class="font-semibold text-xl tracking-tight">Atikur Rahman</span><span
-                        class="text-md pt-[5px] text-[#f9004d] ">.com</span>
-                </div>
-                <div class="flex items-center justify-between">
-                    <a href="#"
-                        class="inline-block text-sm px-3 py-1 lg:py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white lg:mt-0">Home</a>
-                </div>
+<body class="bg-[#0e0f11] text-white">
+
+    <!-- Navbar -->
+    <header class="bg-[#0e0f11] fixed w-full z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-xl">Atikur Rahman</span>
+                <span class="text-[#f9004d] text-lg">.com</span>
+            </div>
+
+            <!-- Desktop menu -->
+            <nav class="hidden lg:flex gap-8 items-center text-gray-300">
+                <a href="#home" class="hover:text-[#f9004d] transition-colors">Home</a>
+                <a href="#services" class="hover:text-[#f9004d] transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-[#f9004d] transition-colors">Portfolio</a>
+                <a href="#about" class="hover:text-[#f9004d] transition-colors">About</a>
+                <a href="#contact" class="hover:text-[#f9004d] transition-colors">Contact</a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="lg:hidden text-gray-300 text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="lg:hidden bg-[#0e0f11] overflow-hidden max-h-0 transition-all duration-500">
+            <nav class="flex flex-col justify-center items-end gap-4 px-6 py-4 text-gray-300">
+                <a href="#home" class="hover:text-[#f9004d] transition-colors">Home</a>
+                <a href="#services" class="hover:text-[#f9004d] transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-[#f9004d] transition-colors">Portfolio</a>
+                <a href="#about" class="hover:text-[#f9004d] transition-colors">About</a>
+                <a href="#contact" class="hover:text-[#f9004d] transition-colors">Contact</a>
             </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- banner section-->
-    <section class="relative banner bg-cover bg-center bg-no-repeat bg-black/60 bg-blend-overlay ">
+    <!-- Main -->
+    <main class="pt-20">
 
-        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-15 md:gap-10 lg:gap-10 item-center px-8 md:px-10 lg:px-0 py-8 lg:py-20 container mx-auto">
+        <!-- Banner / Hero -->
+        <section id="home" class="banner bg-black/60 bg-blend-overlay bg-cover bg-center py-20 animate-fadeSlideUp">
+            <div class="container mx-auto grid lg:grid-cols-2 gap-10 px-6 lg:px-0 items-center ">
 
-            <!-- Info -->
-            <div class="flex flex-col items-center lg:items-start lg:pr-10 lg:pt-10  rounded-lg  order-2 lg:order-1 bg-black/30 px-10">
+                <!-- Info -->
+                <div class="flex flex-col gap-2 lg:gap-6 order-2 lg:order-1 items-center lg:items-start pt-10 px-30 lg:px-10">
+                    <p class="text-gray-400 text-lg">"Welcome to My Portfolio"</p>
+                    <h2 class="text-3xl lg:text-4xl">👋 Hey there!</h2>
+                    <h1 class="text-4xl lg:text-5xl font-bold">I'm <span class="text-[#f9004d]">Atikur Rahman</span></h1>
+                    <h3 class="text-2xl lg:text-3xl">Web Developer</h3>
+                    <p class="text-gray-400 px-20 lg:px-0 lg:pr-10 text-center lg:text-start">I am a passionate front-end developer who loves creating modern, responsive, and user-friendly websites.</p>
 
-                <div class=" flex flex-col items-center lg:items-start">
-                    <p class="text-sm lg:text-lg text-gray-400  lg:py-3"> " Welcome to My Portfolio "</p>
-                    <h2 class="text-lg lg:text-3xl text-white lg:pb-3">&#128075; Hey there!</h2>
-                    <h1 class="text-3xl lg:text-5xl font-bold  text-white pb-3 ">It's <span class="text-[#f9004d] ">Atikur Rahman</span></h1>
-                    <h1 class="text-2xl lg:text-4xl lg:pb-3 text-white">Web Developer</h1>
-                    <p class="text-sm lg:text-lg  text-center lg:text-start pb-3 text-gray-400 lg:pr-10 px-15 lg:px-0 ">I am a passionate front-end developer who loves creating modern, responsive, and user-friendly websites.</p>
+                    <!-- Socials -->
+                    <div class="flex gap-4 pt-4">
+                        <a href="https://www.facebook.com/mohammad.a.rahman.359" class="p-2 rounded-md bg-[#1f2125] hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] duration-150 transition-all shadow-lg" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/atikur-rahman-445a1438b/" class="p-2 rounded-md bg-[#1f2125] hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] duration-150 transition-all shadow-lg" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/atikurrahman24" class="p-2 rounded-md bg-[#1f2125] hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] duration-150 transition-all shadow-lg" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center lg:items-start pt-4">
-                    <h3 class="text-lg text-white py-3">Get in Touch</h3>
-                    <div class="flex gap-6">
-                        <a href="https://www.facebook.com/mohammad.a.rahman.359" class="text-gray-300 sm:text-md md:text-xl lg:text-2xl p-2 lg:p-3 bg-[#1f2125] rounded-md shadow-[0_0_30px_rgba(75,85,99,0.4)] hover:text-blue-600 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] duration-150" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/atikur-rahman-445a1438b/" class="text-gray-300 sm:text-md md:text-xl lg:text-2xl p-2 lg:p-3 bg-[#1f2125] rounded-md shadow-[0_0_30px_rgba(75,85,99,0.4)] hover:text-blue-600 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] duration-150" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/atikurrahman24" class="text-gray-300 sm:text-md md:text-xl lg:text-2xl p-2 lg:p-3 bg-[#1f2125] rounded-md shadow-[0_0_30px_rgba(75,85,99,0.4)] hover:text-blue-600 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] duration-150" target="_blank"><i class="fab fa-github"></i></a>
+
+                <!-- Profile Image -->
+                <div class="flex justify-center lg:justify-end animate-fadeSlideUp order-1 lg:order-2">
+                    <img src="./Images/profile.jpg" class="w-2/4 lg:w-3/4 rounded-full object-cover hover:scale-105 transition-transform duration-300 shadow-lg" alt="Atikur Rahman Profile">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-20 bg-gradient-to-b from-[#1e2024] to-[#23272b] animate-fadeSlideUp">
+
+            <div class="text-center mb-20">
+                <h2 class="text-[#f9004d] text-xl mb-4">Services</h2>
+                <div class="flex items-center justify-center w-full ">
+                    <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">What I Do</span><span class="w-10 h-px bg-[#f9004d]"></span>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-8 px-6 lg:px-0">
+
+                <!-- Service 1 -->
+                <div class="bg-[#1f2125] border border-gray-500 p-6 rounded-lg shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:shadow-[0_0_20px_rgba(25,155,255,0.5)] text-center max-w-xs transition-all duration-300">
+                    <div class="text-4xl text-[#f9004d] mb-4"><i class="fas fa-code"></i></div>
+                    <h4 class="text-xl font-semibold mb-2">Web Development</h4>
+                    <p class="text-gray-300">Building responsive and dynamic websites using modern technologies.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-[#1f2125] border border-gray-500 p-6 rounded-lg shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:shadow-[0_0_20px_rgba(25,155,255,0.5)] text-center max-w-xs transition-all duration-300">
+                    <div class="text-4xl text-[#f9004d] mb-4"><i class="fas fa-paint-brush"></i></div>
+                    <h4 class="text-xl font-semibold mb-2">UI/UX Design</h4>
+                    <p class="text-gray-300">Building responsive and modern website designs with creativity.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-[#1f2125] border border-gray-500 p-6 rounded-lg shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:shadow-[0_0_20px_rgba(25,155,255,0.5)] text-center max-w-xs transition-all duration-300">
+                    <div class="text-4xl text-[#f9004d] mb-4"><i class="fas fa-mobile-alt"></i></div>
+                    <h4 class="text-xl font-semibold mb-2">Mobile Development</h4>
+                    <p class="text-gray-300">Making websites mobile-friendly and responsive for all devices.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Project -->
+        <section id="Project" class="py-20 bg-gradient-to-b from-[#1e2024] to-[#23272b] animate-fadeSlideUp">
+
+            <!-- Headings -->
+            <div class="text-center mb-10">
+                <h2 class="text-[#f9004d] text-xl mb-4">Projects</h2>
+                <div class="flex items-center justify-center w-full ">
+                    <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">My Projects</span><span class="w-10 h-px bg-[#f9004d]"></span>
+                </div>
+            </div>
+
+            <!-- Project Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 place-items-center justify-center px-10 ">
+
+                <!-- Project Item 1 -->
+                <div class="bg-[#1f2125] max-w-[300px] border-1 border-gray-600 p-4 m-10 rounded-lg shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] duration-150 group ">
+                    <img src="./Images/web-1.jpg" alt="Project 1" class="rounded-md w-full h-48 object-cover mb-4 group-hover:scale-105 transition-transform duration-300">
+
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#97113c] rounded-2xl">HTML</span>
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#dd1152] to-[#b6073e] rounded-2xl">CSS</span>
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#f32667] rounded-2xl">Tailwind CSS</span>
+                    </div>
+
+                    <h3 class="text-xl text-white font-semibold mb-2">Gymnesium Web Model</h3>
+                    <p class="text-sm text-gray-300 pb-5">Stylish gym website designed for workouts, trainers, schedules, fitness tips, membership, and healthy lifestyle inspiration. <span class="text-sm text-blue-400">See more....</span></p>
+                    <div class="flex items-center justify-center gap-2 ">
+                        <a href="https://github.com/atikurrahman24/assesment.git" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-code"></i> Source</a>
+                        <a href="https://atikurrahman24.github.io/assesment/" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-link"></i> Server Link</a>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="bg-[#1f2125] max-w-[300px] border-1 border-gray-600 p-4 m-10 rounded-lg shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] duration-150 group">
+                    <img src="./Images/web-2.jpg" alt="Project 2" class="rounded-md w-full h-48 object-cover mb-4 group-hover:scale-105 transition-transform duration-300">
+
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#75092b] rounded-2xl">HTML</span>
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#dd1152] to-[#b6073e] rounded-2xl">CSS</span>
+                    </div>
+
+                    <h3 class="text-xl text-white font-semibold mb-2">Medical Service Website</h3>
+                    <p class="text-sm text-gray-300 pb-5">A responsive website for a medical service provider, featuring appointment booking, doctor profiles, and health resources. <span class="text-sm text-blue-400">See more....</span></p>
+                    <div class="flex justify-center items-center gap-3 ">
+                        <a href="https://github.com/atikurrahman24/Medical_web_design.git" class="text-xs border px-2 py-1 rounded-lg text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-code"></i> Source</a>
+                        <a href="https://atikurrahman24.github.io/Medical_web_design/" class="text-xs border px-2 py-1 rounded-lg text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-link"></i> Server Link</a>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="bg-[#1f2125] max-w-[300px] border-1 border-gray-600 p-4 m-10 rounded-lg shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] duration-150 group">
+                    <img src="./Images/web-3.jpg" alt="Project 3" class="rounded-md w-full h-48 object-cover mb-4 group-hover:scale-105 transition-transform duration-300">
+
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#9dcedd] to-[#046fc7] rounded-2xl">HTML</span>
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#40d133] to-[#24d381] rounded-2xl">CSS</span>
+                        <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#b90e44] rounded-2xl">Tailwind CSS</span>
+                    </div>
+
+                    <h3 class="text-xl text-white font-semibold mb-2">Simple Portfolio Design</h3>
+                    <p class="text-sm text-gray-300 pb-5">Clean, modern portfolio website showcasing diverse projects, skills, achievements, experience, creativity, innovation. <span class="text-sm text-blue-400">See more....</span></p>
+                    <div class="flex justify-center items-center gap-3 ">
+                        <a href="https://github.com/atikurrahman24/simple-port-design.git" class="text-xs border px-2 py-1 rounded-lg text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-code"></i> Source</a>
+                        <a href="https://atikurrahman24.github.io/simple-port-design/" class="text-xs border px-2 py-1 rounded-lg text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-link"></i> Server Link</a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- profile image -->
-            <div class="flex items-center order-1 lg:order-2 justify-center rounded-full p-8">
-                <img src="./Images/profile.jpg" alt="" class="w-1/2 lg:w-3/4 h-auto rounded-full object-cover hover:shadow-[0_0_60px_rgba(37,99,235,0.7)] duration-150">
-            </div>
+        </section>
 
-        </div>
 
-    </section>
+        <!-- about me section -->
+        <section class="pt-10 pb-20 px-10 bg-gradient-to-b from-[#1e2024] to-[#23272b] border-t-0 border-b-1 border-[#515764]">
 
-    <!-- service section -->
-    <section class="pt-10 pb-20 px-10 bg-gradient-to-b from-[#1e2024] to-[#23272b] border-t-2 border-b-1 border-[#30343b]">
-        <!-- Headings -->
-        <div class="text-center mb-10">
-            <h2 class="text-xl text-[#f9004d] mb-4">Services</h2>
-            <div class="flex items-center justify-center w-full ">
-                <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">What I Do</span><span class="w-10 h-px bg-[#f9004d]"></span>
-            </div>
-        </div>
-
-        <!-- Service Items -->
-        <div class="flex flex-col lg:flex-row gap-10 lg:gap-30 items-center justify-center">
-
-            <!-- Service Item 1 -->
-            <div class="bg-[#1f2125] max-w-[350px] border-1 border-gray-600 flex flex-col items-center p-6 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)] duration-150">
-                <div class="text-4xl text-[#f9004d] mb-4"><i class="fas fa-code"></i></div>
-                <h3 class="text-xl text-white font-semibold mb-2">Web Development</h3>
-                <p class="text-gray-300 text-center"> Building responsive and dynamic websites using modern technologies.</p>
-            </div>
-            <!-- Service Item 2 -->
-            <div class="bg-[#1f2125] max-w-[350px] border-1 border-gray-600 flex flex-col items-center p-6 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)] duration-150">
-                <div class="text-4xl text-[#f9004d] mb-4"><i class="fas fa-paint-brush"></i></div>
-                <h3 class="text-xl text-white font-semibold mb-2">UI/UX Design</h3>
-                <p class="text-gray-300 text-center"> Building responsive and dynamic websites design using modern ideas.</p>
-            </div>
-            <!-- Service Item 3 -->
-            <div class="bg-[#1f2125] max-w-[350px] border-1 border-gray-600 flex flex-col items-center p-6 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)] duration-150">
-                <div class="text-4xl text-[#f9004d] mb-4"><i class="fas fa-mobile-alt"></i></div>
-                <h3 class="text-xl text-white font-semibold mb-2">Mobile Development</h3>
-                <p class="text-gray-300 text-center"> Building the website responsive and dynamic for mobile phones.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- portfolio section -->
-    <section class="pt-10 pb-20 px-10 bg-gradient-to-b from-[#1e2024] to-[#23272b] border-t-0 border-b-1 border-[#515764]">
-        <!-- Headings -->
-        <div class="text-center my-10 pb-10 lg:pb-0">
-            <h2 class="text-xl text-[#f9004d] mb-4">VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK</h2>
-            <div class="flex items-center justify-center w-full ">
-                <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">My Portfolio</span><span class="w-10 h-px bg-[#f9004d]"></span>
-            </div>
-        </div>
-
-        <!-- Portfolio Items -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 place-items-center justify-center lg:justify-between px-10 ">
-
-            <!-- Portfolio Item 1 -->
-            <div class="bg-[#1f2125] max-w-[300px] border-1 border-gray-600 p-4 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)] duration-150">
-                <img src="./Images/web-1.jpg" alt="Portfolio 1" class="w-full h-48 object-cover rounded-md mb-4">
-
-                <div class="flex flex-wrap gap-1 mb-3">
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#97113c] rounded-2xl">HTML</span>
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#dd1152] to-[#b6073e] rounded-2xl">CSS</span>
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#f32667] rounded-2xl">Tailwind CSS</span>
-
+            <!-- Headings -->
+            <div class="text-center my-10">
+                <h2 class="text-xl text-[#f9004d] mb-4">KNOW ME MORE</h2>
+                <div class="flex items-center justify-center w-full ">
+                    <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">Who I Am</span><span class="w-10 h-px bg-[#f9004d]"></span>
                 </div>
+            </div>
 
-                <h3 class="text-xl text-white font-semibold mb-2">Gymnesium Web Model</h3>
-                <p class="text-sm text-gray-300 pb-5">Stylish gym website designed for workouts, trainers, schedules, fitness tips, membership, and healthy lifestyle inspiration. <span class="text-sm text-blue-400">See more....</span></p>
+            <!-- About Me Content -->
+            <div class="grid lg:grid-cols-2 place-items-center gap-10 lg:gap-20 px-10">
 
-                <div class="flex items-center justify-center gap-2 ">
-                    <a href="https://github.com/atikurrahman24/assesment.git" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-code"></i> Source</a>
-                    <a href="https://atikurrahman24.github.io/assesment/" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-link"></i> Server Link</a>
+                <!-- image -->
+                <img src="./Images/profile.jpg" alt="" class="w-3/4 md:w-2/4 lg:w-2/3 min-w-60 max-w-100 h-auto rounded-full border-2 border-[#f9004d] shadow-[0_0_20px_rgba(75,85,99,0.4)] object-cover">
+
+                <!-- About Me Text -->
+                <div class="pl-0  flex flex-col justify-center">
+
+                    <h3 class="text-2xl text-white  mb-4">I`m Available for</h3>
+                    <h4 class="text-xl text-[#f9004d] mb-4">Web Development</h4>
+                    <h3 class="text-3xl text-white mb-4">All About <span class="text-[#f9004d]">Me</span></h3>
+                    <h4 class="text-lg text-[#f9004d] px-5 ">1. <span class="text-white"> Technical Skills</span></h4>
+                    <h4 class="text-lg text-[#f9004d] px-5 ">2. <span class="text-white"> Web Development</span></h4>
+                    <h4 class="text-lg text-[#f9004d] px-5 mb-4">3. <span class="text-white"> Design</span></h4>
+
+                    <p class="text-gray-300 mb-4">I am Atikur Rahman, a dedicated web developer with a passion for creating dynamic and responsive websites. With expertise in both front-end and back-end technologies, I strive to deliver seamless user experiences. My journey in web development has equipped me with the skills to tackle complex challenges and bring innovative ideas to life.</p>
+                    <p class="text-gray-300 mb-4">When I'm not coding, I enjoy exploring new technologies and staying updated with industry trends. I believe in continuous learning and growth, which drives me to enhance my skills and contribute effectively to every project I undertake.</p>
+
+                    <a href="./Images/My_Resume.pdf" download="Atik_Resume.pdf" class="text-gray-300 text-center text-md px-2 py-2 bg-[#1f2125] max-w-[200px] rounded-sm shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:text-blue-600 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] duration-150"><i class="fas fa-download"></i> Download Resume</a>
                 </div>
 
             </div>
 
-            <!-- Portfolio Item 2 -->
-            <div class="bg-[#1f2125] max-w-[300px] border-1 border-gray-600 p-4 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)] duration-150">
-                <img src="./Images/web-2.jpg" alt="Portfolio 2" class="w-full h-48 object-cover rounded-md mb-4">
+        </section>
 
-                <div class="flex flex-wrap gap-1 mb-3">
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#75092b] rounded-2xl">HTML</span>
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#dd1152] to-[#b6073e] rounded-2xl">CSS</span>
-                </div>
 
-                <h3 class="text-xl text-white font-semibold mb-2">Medical Service Website</h3>
-                <p class="text-sm text-gray-300 pb-5">A responsive website for a medical service provider, featuring appointment booking, doctor profiles, and health resources. <span class="text-sm text-blue-400">See more....</span></p>
+        <!-- Contact Section -->
+        <section class="pt-10 pb-20 px-10 bg-gradient-to-b from-[#1e2024] to-[#23272b] border-t-0 border-b-1 border-[#515764]">
 
-                <div class="flex justify-center items-center gap-2 ">
-                    <a href="https://github.com/atikurrahman24/Medical_web_design.git" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-code"></i> Source</a>
-                    <a href="https://atikurrahman24.github.io/Medical_web_design/" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-link"></i> Server Link</a>
+            <!-- Headings -->
+            <div class="text-center my-10">
+                <h2 class="text-xl text-[#f9004d] mb-4">LETS DISCUSS YOUR PROJECT</h2>
+                <div class="flex items-center justify-center w-full ">
+                    <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">CONTACT ME</span><span class="w-10 h-px bg-[#f9004d]"></span>
                 </div>
             </div>
 
-            <!-- Portfolio Item 3 -->
-            <div class="bg-[#1f2125] max-w-[300px] border-1 border-gray-600 p-4 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)] duration-150">
-                <img src="./Images/web-3.jpg" alt="Portfolio 3" class="w-full h-48 object-cover rounded-md mb-4">
+            <!-- Action -->
+            <div class="flex flex-col lg:flex-row justify-center place-items-center pt-10 gap-10 px-auto ">
 
-                <div class="flex flex-wrap gap-1 mb-3">
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#9dcedd] to-[#046fc7] rounded-2xl">HTML</span>
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#40d133] to-[#24d381] rounded-2xl">CSS</span>
-                    <span class="py-1 px-3 text-sm text-center text-white bg-gradient-to-r from-[#f9004d] to-[#b90e44] rounded-2xl">Tailwind CSS</span>
-                </div>
-
-                <h3 class="text-xl text-white font-semibold mb-2">Simple Portfolio Design</h3>
-                <p class="text-sm text-gray-300 pb-5">Clean, modern portfolio website showcasing diverse projects, skills, achievements, experience, creativity, innovation.
-                <span class="text-sm text-blue-400">See more....</span></p>
-
-                <div class="flex justify-center items-center gap-2 ">
-                    <a href="https://github.com/atikurrahman24/simple-port-design.git" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-code"></i> Source</a>
-                    <a href="https://atikurrahman24.github.io/simple-port-design/" class="text-xs border px-2 py-1 rounded-2xl text-white hover:bg-blue-500 duration-200" target="_blank"><i class="fa-solid fa-link"></i> Server Link</a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- about me section -->
-    <section class="pt-10 pb-20 px-10 bg-gradient-to-b from-[#1e2024] to-[#23272b] border-t-0 border-b-1 border-[#515764]">
-        <!-- Headings -->
-        <div class="text-center my-10">
-            <h2 class="text-xl text-[#f9004d] mb-4">KNOW ME MORE</h2>
-            <div class="flex items-center justify-center w-full ">
-                <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">Who I Am</span><span class="w-10 h-px bg-[#f9004d]"></span>
-            </div>
-        </div>
-
-        <!-- About Me Content -->
-        <div class="grid lg:grid-cols-2 place-items-center gap-10 lg:gap-20 px-10">
-            <!-- image -->
-            <img src="./Images/profile.jpg" alt="" class="w-3/4 md:w-2/4 lg:w-2/3 min-w-60 max-w-100 h-auto rounded-full border-2 border-[#f9004d] shadow-[0_0_20px_rgba(75,85,99,0.4)] object-cover">
-
-            <!-- About Me Text -->
-            <div class="pl-0  flex flex-col justify-center">
-
-                <h3 class="text-2xl text-white  mb-4">I`m Available for</h3>
-                <h4 class="text-xl text-[#f9004d] mb-4">Web Development</h4>
-                <h3 class="text-3xl text-white mb-4">All About <span class="text-[#f9004d]">Me</span></h3>
-                <h4 class="text-lg text-[#f9004d] px-5 ">1. <span class="text-white"> Technical Skills</span></h4>
-                <h4 class="text-lg text-[#f9004d] px-5 ">2. <span class="text-white"> Web Development</span></h4>
-                <h4 class="text-lg text-[#f9004d] px-5 mb-4">3. <span class="text-white"> Design</span></h4>
-
-                <p class="text-gray-300 mb-4">I am Atikur Rahman, a dedicated web developer with a passion for creating dynamic and responsive websites. With expertise in both front-end and back-end technologies, I strive to deliver seamless user experiences. My journey in web development has equipped me with the skills to tackle complex challenges and bring innovative ideas to life.</p>
-                <p class="text-gray-300 mb-4">When I'm not coding, I enjoy exploring new technologies and staying updated with industry trends. I believe in continuous learning and growth, which drives me to enhance my skills and contribute effectively to every project I undertake.</p>
-
-                <a href="./Images/My Resume .pdf" download="Atik_Resume.pdf" class="text-gray-300 text-center text-md px-2 py-2 bg-[#1f2125] max-w-[200px] rounded-sm shadow-[0_0_20px_rgba(75,85,99,0.4)] hover:text-blue-600 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] duration-150"><i class="fas fa-download"></i> Download Resume</a>
-            </div>
-
-         </div>
-
-    </section>
-
-    <!-- Contact Section -->
-    <section class="pt-10 pb-20 px-10 bg-gradient-to-b from-[#1e2024] to-[#23272b] border-t-0 border-b-1 border-[#515764]">
-        <!-- Headings -->
-        <div class="text-center my-10">
-            <h2 class="text-xl text-[#f9004d] mb-4">LETS DISCUSS YOUR PROJECT</h2>
-            <div class="flex items-center justify-center w-full ">
-                <span class="w-10 h-[1px] bg-[#f9004d]"></span><span class="mx-4 text-white text-3xl font-bold">CONTACT ME</span><span class="w-10 h-px bg-[#f9004d]"></span>
-            </div>
-        </div>
-
-        <!-- Actions -->
-        <div class="flex flex-wrap gap-10 justify-center px-10  items-center ">
-
-            <!-- contact details -->
-            <div class="flex flex-col md:flex-row lg:flex-col gap-4 md:gap-10 lg:gap-4 items-center justify-center">
-
-                <!-- phone number -->
-                <div class="flex flex-col w-60 gap-2 bg-[#1f2125] rounded-lg p-4 shadow-[0_0_20px_rgba(75,85,99,0.4)]">
-                    <span class="text-3xl text-[#f9004d]"><i class="fa-solid fa-phone"></i></span>
-                    <Div class="flex justify-between gap-10">
+                <!-- Contact Details -->
+                <div class="flex flex-col gap-8">
+                    <div class="flex items-center gap-4 bg-[#1f2125] p-4 rounded shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-phone text-[#f9004d] text-2xl"></i>
                         <span class="text-gray-300">+88 01407791541</span>
-                        <span class="text-gray-500"><i class="fa-regular fa-copy"></i></span>
-                    </Div>
-                </div>
-
-                <!-- email -->
-                <div class="flex flex-col w-60 gap-2 bg-[#1f2125] rounded-lg p-4 shadow-[0_0_20px_rgba(75,85,99,0.4)]">
-                    <span class="text-3xl text-[#f9004d]"><i class="fa-solid fa-envelope"></i></span>
-                    <Div class="flex justify-between gap-10">
+                    </div>
+                    <div class="flex items-center gap-4 bg-[#1f2125] p-4 rounded shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-envelope text-[#f9004d] text-2xl"></i>
                         <span class="text-gray-300">thtatikurarahman24@gmail.com</span>
-                        <span class="text-gray-500"><i class="fa-regular fa-copy"></i></span>
-                    </Div>
-                </div>
-
-                <!-- location -->
-                <div class="flex flex-col w-60 gap-2 bg-[#1f2125] rounded-lg p-4 shadow-[0_0_20px_rgba(75,85,99,0.4)]">
-                    <span class="text-3xl text-[#f9004d]"><i class="fa-solid fa-map-location-dot"></i></span>
-                    <Div class="flex justify-between gap-10">
+                    </div>
+                    <div class="flex items-center gap-4 bg-[#1f2125] p-4 rounded shadow-[0_0_10px_rgba(75,85,99,0.4)] hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-map-marker-alt text-[#f9004d] text-2xl"></i>
                         <span class="text-gray-300">Dhaka, Bangladesh</span>
-                        <span class="text-gray-500"><i class="fa-solid fa-location-dot"></i></span>
-                    </Div>
+                    </div>
                 </div>
 
-            </div>
+                <!-- contact form -->
+                <div class="max-w-lg mx-auto bg-[#1f2125] p-6 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)]">
+                    <form action="#" method="POST" class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-5">
+                        <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 bg-[#191b1e] text-white border-t-2 border-t-black border-b-2 border-b-[#32383d] rounded-md focus:outline-none focus:bg-slate-900">
+                        <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 bg-[#191b1e] text-white border-t-2 border-t-black border-b-2 border-b-[#32383d] rounded-md focus:outline-none focus:bg-slate-900">
+                        <textarea name="message" rows="5" placeholder="Your Message" class="px-4 py-2 col-span-2 bg-[#191b1e] text-white border-t-2 border-t-black border-b-2 border-b-[#32383d] rounded-md focus:outline-none focus:bg-slate-900"></textarea>
+                        <button type="submit" class="bg-[#32383d] text-[#f9004d] col-span-2 px-4 py-2 rounded-md hover:bg-slate-800 transition-colors duration-300 ">Send Message</button>
+                    </form>
+                </div>
 
-            <!-- contact form -->
-            <div class="max-w-lg mx-auto bg-[#1f2125] p-6 rounded-lg shadow-[0_0_20px_rgba(75,85,99,0.4)]">
-                <form action="#" method="POST" class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-5">
-                    <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 bg-[#191b1e] text-white border-t-2 border-t-black border-b-2 border-b-[#32383d] rounded-md focus:outline-none focus:bg-slate-900">
-                    <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 bg-[#191b1e] text-white border-t-2 border-t-black border-b-2 border-b-[#32383d] rounded-md focus:outline-none focus:bg-slate-900">
-                    <textarea name="message" rows="5" placeholder="Your Message" class="px-4 py-2 col-span-2 bg-[#191b1e] text-white border-t-2 border-t-black border-b-2 border-b-[#32383d] rounded-md focus:outline-none focus:bg-slate-900"></textarea>
-                    <button type="submit" class="bg-[#32383d] text-[#f9004d] col-span-2 px-4 py-2 rounded-md hover:bg-slate-800 transition-colors duration-300 ">Send Message</button>
-                </form>
-            </div>
+            </div> 
 
-        </div>
+        </section>
 
-    </section>
+    </main>
 
-    <!-- footer start-->
-    <footer class="bg-[#23272b] text-white">
-        <div>
-            <p class="text-center py-6">© 2025 Atikur Rahman. All rights reserved.</p>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-[#23272b] text-white text-center py-6">
+        © 2025 Atikur Rahman. All rights reserved.
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('max-h-0');
+            menu.classList.toggle('max-h-screen');
+        });
+    </script>
 
 </body>
 
